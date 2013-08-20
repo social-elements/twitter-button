@@ -1,12 +1,16 @@
-<polymer-element name="twitter" attributes="text type href user height width">
+<polymer-element name="twitter" attributes="text type href user height width language">
 
 	<template>
 		<template if="{{type == 'follow'}}">
-			<iframe src="https://platform.twitter.com/widgets/follow_button.html?screen_name={{user}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+			<iframe src="https://platform.twitter.com/widgets/follow_button.html?screen_name={{user}}&amp;lang={{language}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
 		</template>
 
 		<template if="{{type == 'share'}}">
-			<iframe src="http://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+			<iframe src="http://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}&amp;lang={{language}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+		</template>
+
+		<template if="{{type == 'mention'}}">
+			<iframe src="http://platform.twitter.com/widgets/tweet_button.html?count=none&amp;screen_name={{user}}&amp;type=mention&amp;lang={{language}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
 		</template>
 
 		<style>
@@ -19,12 +23,13 @@
 
 	<script>
 		Polymer('twitter', {
-			text  : 'Custom Elements rocks!',
-			href  : 'http://customelements.io',
-			user  : 'zenorocha',
-			height: '25',
-			width : '115',
-			type  : 'share'
+			text      : 'Custom Elements rocks!',
+			href      : 'http://customelements.io',
+			user      : 'zenorocha',
+			height    : '25',
+			width     : '115',
+			type      : 'share',
+			language  : 'en'
 		});
 	</script>
 
