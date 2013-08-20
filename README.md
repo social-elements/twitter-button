@@ -1,8 +1,12 @@
 # &lt;twitter&gt;
 
-TODO: Write a project description
+A Web Component implementation of [Twitter's share button](https://twitter.com/about/resources/buttons#tweet) using Polymer.
 
 > Maintained by [Zeno Rocha](https://github.com/zenorocha).
+
+## Demo
+
+![Twitter Button](http://zno.io/QtuS/twitter-element.png)
 
 ## Usage
 
@@ -43,6 +47,12 @@ Attribute | Options  | Default                    | Description
 3. Commit your changes: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
+
+## Roadmap
+
+* Add support for [Follow button](https://twitter.com/about/resources/buttons#follow)
+* Add support for [Hashtag button](https://twitter.com/about/resources/buttons#hashtag)
+* Add support for [Mention button](https://twitter.com/about/resources/buttons#mention)
 
 ## History
 
