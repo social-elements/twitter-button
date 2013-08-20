@@ -1,8 +1,8 @@
-# &lt;my-element&gt;
+# &lt;twitter&gt;
 
 TODO: Write a project description
 
-> Maintained by [Your Name](https://github.com/yourname).
+> Maintained by [Zeno Rocha](https://github.com/zenorocha).
 
 ## Usage
 
@@ -15,23 +15,26 @@ TODO: Write a project description
 2. Import Custom Element:
 
 	```html
-	<link rel="import" href="src/my-element.html">
+	<link rel="import" href="src/twitter.html">
 	```
 
 3. Start using it!
 
 	```xml
-	<my-element></my-element>
+	<twitter></twitter>
 	```
 
 ## Options
 
-Attribute  | Options                   | Default             | Description
----        | ---                       | ---                 | ---
-`foo`      | *string*                  | `bar`               | Lorem ipsum
-`bar`      | `abc`, `def`, `ghi` 	   | `foo`               | Lorem ipsum
-`height`   | *int*                     | `100`               | Lorem ipsum
+Attribute | Options  | Default                    | Description
+---       | ---      | ---                        | ---
+`text`    | *string* | `Custom Elements rocks!`   | The text displayed on the tweet
+`href`    | *string* | `http://customelements.io` | The URL displayed on the tweet
+`user`    | *string* | `zenorocha`                | The user displayed on the tweet
+`height`  | *int*    | `25`                       | The height of the button
+`width`   | *int*    | `115`                      | The width of the button
 
+> See Twitter's [official documentation](https://twitter.com/about/resources/buttons).
 
 ## Contributing
 

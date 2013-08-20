@@ -1,0 +1,24 @@
+<polymer-element name="twitter" attributes="text href user height width">
+
+	<template>
+		<iframe src="http://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+
+		<style>
+			iframe {
+				height: {{height}}px;
+				width: {{width}}px;
+			}
+		</style>
+	</template>
+
+	<script>
+		Polymer('twitter', {
+			text  : 'Custom Elements rocks!',
+			href  : 'http://customelements.io',
+			user  : 'zenorocha',
+			height: '25',
+			width : '115'
+		});
+	</script>
+
+</polymer-element>
