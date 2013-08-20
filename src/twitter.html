@@ -1,7 +1,13 @@
-<polymer-element name="twitter" attributes="text href user height width">
+<polymer-element name="twitter" attributes="text type href user height width">
 
 	<template>
-		<iframe src="http://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+		<template if="{{type == 'follow'}}">
+			<iframe src="https://platform.twitter.com/widgets/follow_button.html?screen_name={{user}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+		</template>
+
+		<template if="{{type == 'share'}}">
+			<iframe src="http://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+		</template>
 
 		<style>
 			iframe {
@@ -17,7 +23,8 @@
 			href  : 'http://customelements.io',
 			user  : 'zenorocha',
 			height: '25',
-			width : '115'
+			width : '115',
+			type  : 'share'
 		});
 	</script>
 

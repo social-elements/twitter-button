@@ -32,13 +32,14 @@ Web Component wrapper for [Twitter's share button](https://twitter.com/about/res
 
 ## Options
 
-Attribute | Options  | Default                    | Description
----       | ---      | ---                        | ---
-`text`    | *string* | `Custom Elements rocks!`   | The text displayed on the tweet
-`href`    | *string* | `http://customelements.io` | The URL displayed on the tweet
-`user`    | *string* | `zenorocha`                | The user displayed on the tweet
-`height`  | *int*    | `25`                       | The height of the button
-`width`   | *int*    | `115`                      | The width of the button
+Attribute | Options  		  | Default                    | Description
+---       | ---      		  | ---                        | ---
+`text`    | *string* 		  | `Custom Elements rocks!`   | The text displayed on the tweet
+`type`    | `share`, `follow` | `share`   				   | The type of button
+`href`    | *string* 		  | `http://customelements.io` | The URL displayed on the tweet
+`user`    | *string* 		  | `zenorocha`                | The user displayed on the tweet
+`height`  | *int*    		  | `25`                       | The height of the button
+`width`   | *int*    		  | `115`                      | The width of the button
 
 > See Twitter's [official documentation](https://twitter.com/about/resources/buttons).
 
@@ -52,12 +53,13 @@ Attribute | Options  | Default                    | Description
 
 ## Roadmap
 
-* Add support for [Follow button](https://twitter.com/about/resources/buttons#follow)
 * Add support for [Hashtag button](https://twitter.com/about/resources/buttons#hashtag)
 * Add support for [Mention button](https://twitter.com/about/resources/buttons#mention)
 
 ## History
 
+* [v0.1.1](https://github.com/customelements/twitter-element/releases/tag/0.1.1) August 20, 2013
+	* Added support for [Follow button](https://twitter.com/about/resources/buttons#follow)
 * [v0.1.0](https://github.com/customelements/twitter-element/releases/tag/0.1.0) August 20, 2013
 	* Initial development release
 * v0.0.1 August 19, 2013
