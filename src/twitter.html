@@ -1,4 +1,4 @@
-<polymer-element name="twitter" attributes="text type href user height width">
+<polymer-element name="twitter" attributes="text type href user height width language">
 
 	<template>
 		<template if="{{type == 'follow'}}">
@@ -7,6 +7,10 @@
 
 		<template if="{{type == 'share'}}">
 			<iframe src="http://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+		</template>
+
+		<template if="{{type == 'mention'}}">
+			<iframe src="http://platform.twitter.com/widgets/tweet_button.html?count=none&amp;screen_name={{user}}&amp;type=mention&amp;lang={{language}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
 		</template>
 
 		<style>
@@ -24,7 +28,8 @@
 			user  : 'zenorocha',
 			height: '25',
 			width : '115',
-			type  : 'share'
+			type  : 'share',
+			language  : 'en'
 		});
 	</script>
 
