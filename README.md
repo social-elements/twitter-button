@@ -1,12 +1,14 @@
 # &lt;twitter&gt;
 
-A Web Component implementation of [Twitter's share button](https://twitter.com/about/resources/buttons#tweet) using Polymer.
+Web Component wrapper for [Twitter's share button](https://twitter.com/about/resources/buttons#tweet) using Polymer.
 
 > Maintained by [Zeno Rocha](https://github.com/zenorocha).
 
 ## Demo
 
 ![Twitter Button](http://zno.io/QtuS/twitter-element.png)
+
+> [Check it live](http://customelements.github.io/twitter-element).
 
 ## Usage
 
@@ -56,6 +58,8 @@ Attribute | Options  | Default                    | Description
 
 ## History
 
+* [v0.1.0](https://github.com/customelements/twitter-element/releases/tag/0.1.0) August 20, 2013
+	* Initial development release
 * v0.0.1 August 19, 2013
 	* Started project using [boilerplate-element](https://github.com/customelements/boilerplate-element)
 
