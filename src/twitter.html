@@ -9,13 +9,13 @@
 			<iframe src="http://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
 		</template>
 
-    <template if="{{type == 'hashtag'}}">
-      <iframe src="https://platform.twitter.com/widgets/tweet_button.html?text={{text}}&amp;button_hashtag={{hashtag}}&amp;type=hashtag" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-    </template>
+		<template if="{{type == 'hashtag'}}">
+			<iframe src="https://platform.twitter.com/widgets/tweet_button.html?text={{text}}&amp;button_hashtag={{hashtag}}&amp;type=hashtag" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+		</template>
 
-    <template if="{{type == 'mention'}}">
-      <iframe src="https://platform.twitter.com/widgets/tweet_button.html?screen_name={{user}}&amp;type=mention" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-    </template>
+		<template if="{{type == 'mention'}}">
+			<iframe src="https://platform.twitter.com/widgets/tweet_button.html?screen_name={{user}}&amp;type=mention" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+		</template>
 
 		<style>
 			iframe {
@@ -30,7 +30,7 @@
 			text   : 'Custom Elements rocks!',
 			href   : 'http://customelements.io',
 			user   : 'zenorocha',
-      hashtag: 'customelements',
+			hashtag: 'customelements',
 			height : '25',
 			width  : '115',
 			type   : 'share'
