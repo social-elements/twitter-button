@@ -52,14 +52,9 @@ Attribute | Options       | Default                    | Description
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## Roadmap
-
-* ~~Add support for [Hashtag button](https://twitter.com/about/resources/buttons#hashtag)~~
-* ~~Add support for [Mention button](https://twitter.com/about/resources/buttons#mention)~~
-
 ## History
 
-* [v0.1.3](https://github.com/zenorocha/badge-element/releases/tag/0.1.3) September 3, 2013
+* [v0.1.3](https://github.com/zenorocha/badge-element/releases/tag/0.1.3) September 4, 2013
   * Added support for [Hashtag button](https://twitter.com/about/resources/buttons#hashtag) and [Mention button](https://twitter.com/about/resources/buttons#mention)
 * [v0.1.2](https://github.com/zenorocha/badge-element/releases/tag/0.1.2) September 3, 2013
   * Use Polymer from CDN and update it to v0.0.20130816
