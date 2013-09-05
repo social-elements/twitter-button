@@ -54,9 +54,9 @@ Attribute | Options       | Default                    | Description
 
 ## History
 
-* [v0.1.3](https://github.com/zenorocha/badge-element/releases/tag/0.1.3) September 4, 2013
+* [v0.1.3](https://github.com/zenorocha/twitter-element/releases/tag/0.1.3) September 4, 2013
   * Added support for [Hashtag button](https://twitter.com/about/resources/buttons#hashtag) and [Mention button](https://twitter.com/about/resources/buttons#mention)
-* [v0.1.2](https://github.com/zenorocha/badge-element/releases/tag/0.1.2) September 3, 2013
+* [v0.1.2](https://github.com/zenorocha/twitter-element/releases/tag/0.1.2) September 3, 2013
   * Use Polymer from CDN and update it to v0.0.20130816
 * [v0.1.1](https://github.com/zenorocha/twitter-element/releases/tag/0.1.1) August 20, 2013
   * Added support for [Follow button](https://twitter.com/about/resources/buttons#follow)
