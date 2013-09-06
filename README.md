@@ -1,4 +1,4 @@
-# &lt;twitter&gt;
+# &lt;my-twitter&gt;
 
 Web Component wrapper for [Twitter's share button](https://twitter.com/about/resources/buttons#tweet) using Polymer.
 
@@ -21,13 +21,13 @@ Web Component wrapper for [Twitter's share button](https://twitter.com/about/res
 2. Import Custom Element:
 
   ```html
-  <link rel="import" href="src/twitter.html">
+  <link rel="import" href="src/my-twitter.html">
   ```
 
 3. Start using it!
 
   ```xml
-  <twitter></twitter>
+  <my-twitter></my-twitter>
   ```
 
 ## Options
