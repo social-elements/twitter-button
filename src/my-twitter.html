@@ -1,4 +1,4 @@
-<polymer-element name="twitter" attributes="text type href user height width">
+<polymer-element name="my-twitter" attributes="text type href user height width">
 
 	<template>
 		<template if="{{type == 'follow'}}">
@@ -26,7 +26,7 @@
 	</template>
 
 	<script>
-		Polymer('twitter', {
+		Polymer('my-twitter', {
 			text   : 'Custom Elements rocks!',
 			href   : 'http://customelements.io',
 			user   : 'zenorocha',
