@@ -1,8 +1,6 @@
-# &lt;twitter&gt;
+# &lt;twitter-button&gt;
 
 Web Component wrapper for [Twitter's share button](https://twitter.com/about/resources/buttons#tweet) using Polymer.
-
-> Maintained by [Zeno Rocha](https://github.com/zenorocha).
 
 ## Demo
 
@@ -14,20 +12,20 @@ Web Component wrapper for [Twitter's share button](https://twitter.com/about/res
 
 1. Import Web Components' polyfill:
 
-  ```html
+  ```xml
   <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20130816/polymer.min.js"></script>
   ```
 
 2. Import Custom Element:
 
-  ```html
-  <link rel="import" href="src/twitter.html">
+  ```xml
+  <link rel="import" href="src/twitter-button.html">
   ```
 
 3. Start using it!
 
   ```xml
-  <twitter></twitter>
+  <twitter-button></twitter-button>
   ```
 
 ## Options
@@ -67,4 +65,4 @@ Attribute | Options       | Default                    | Description
 
 ## License
 
-[MIT License](http://opensource.org/licenses/MIT)
+[MIT License](http://zenorocha.mit-license.org/) © Zeno Rocha
