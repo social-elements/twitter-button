@@ -8,25 +8,35 @@ Web Component wrapper for [Twitter's button](https://twitter.com/about/resources
 
 > [Check it live](http://zenorocha.github.io/twitter-button).
 
+## Install
+
+Install the component using [Bower](http://bower.io/):
+
+```sh
+$ bower install twitter-button --save
+```
+
+Or [download as ZIP](https://github.com/zenorocha/twitter-button/archive/master.zip).
+
 ## Usage
 
 1. Import Web Components' polyfill:
 
-	```xml
-<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20130816/polymer.min.js"></script>
-	```
+    ```html
+    <script src="bower_components/platform/platform.js"></script>
+    ```
 
 2. Import Custom Element:
 
-	```xml
-<link rel="import" href="src/twitter-button.html">
-	```
+    ```html
+    <link rel="import" href="bower_components/twitter-button/dist/twitter-button.html">
+    ```
 
 3. Start using it!
 
-	```xml
-<twitter-button></twitter-button>
-	```
+    ```html
+    <twitter-button></twitter-button>
+    ```
 
 ## Options
 
@@ -42,11 +52,39 @@ Attribute | Options       | Default                    | Description
 
 > See Twitter's [official documentation](https://twitter.com/about/resources/buttons).
 
-## Browser Support
+## Development
 
-![IE](https://raw.github.com/paulirish/browser-logos/master/internet-explorer/internet-explorer_48x48.png) | ![Chrome](https://raw.github.com/paulirish/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/paulirish/browser-logos/master/firefox/firefox_48x48.png) | ![Opera](https://raw.github.com/paulirish/browser-logos/master/opera/opera_48x48.png) | ![Safari](https://raw.github.com/paulirish/browser-logos/master/safari/safari_48x48.png)
---- | --- | --- | --- | --- |
-IE 10+ ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
+In order to run it locally you'll need to fetch some dependencies and a basic server setup.
+
+* Install [Bower](http://bower.io/) & [Grunt](http://gruntjs.com/):
+
+    ```sh
+    $ [sudo] npm install -g bower grunt-cli
+    ```
+
+* Install local dependencies:
+
+    ```sh
+    $ bower install && npm install
+    ```
+
+* To test your project, start the development server and open `http://localhost:8000`.
+
+    ```sh
+    $ grunt server
+    ```
+
+* To build the distribution files before releasing a new version.
+
+    ```sh
+    $ grunt build
+    ```
+
+* To provide a live demo, send everything to `gh-pages` branch.
+
+    ```sh
+    $ grunt deploy
+    ```
 
 ## Contributing
 
@@ -58,7 +96,7 @@ IE 10+ ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
 
 ## History
 
-Check [Release](https://github.com/zenorocha/twitter-button/releases) list.
+For detailed changelog, check [Releases](https://github.com/zenorocha/twitter-button/releases).
 
 ## License
 
