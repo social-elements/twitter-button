@@ -5,7 +5,8 @@
 	<title>&lt;twitter-button&gt;</title>
 
 	<!-- Importing Web Component's Polyfill -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20130816/polymer.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.4/platform.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.4/polymer.js"></script>
 
 	<!-- Importing Custom Elements -->
 	<link rel="import" href="src/twitter-button.html">
@@ -13,19 +14,19 @@
 <body>
 
 	<!-- Using Custom Elements -->
-	<twitter-button type="share" width="300"></twitter-button>
+	<twitter-button type="share" text="Custom Elements rocks!" user="zenorocha" href="http://customelements.io/" width="300"></twitter-button>
 
 	<br><br>
 
-	<twitter-button type="follow" width="300"></twitter-button>
+	<twitter-button type="follow" user="zenorocha" width="300"></twitter-button>
 
 	<br><br>
 
-	<twitter-button type="hashtag" width="300"></twitter-button>
+	<twitter-button type="hashtag" hashtag="customelements" width="300"></twitter-button>
 
 	<br><br>
 
-	<twitter-button type="mention" width="300"></twitter-button>
+	<twitter-button type="mention" user="zenorocha" width="300"></twitter-button>
 
 </body>
 </html>
