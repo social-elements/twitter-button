@@ -42,11 +42,11 @@ Or [download as ZIP](https://github.com/zenorocha/twitter-button/archive/master.
 
 Attribute | Options       | Default                    | Description
 ---       | ---           | ---                        | ---
-`text`    | *string*      | `Custom Elements rocks!`   | The text displayed on the tweet
+`text`    | *string*      | `Web Components rocks!`   | The text displayed on the tweet
 `type`    | `share`, `follow`, `hashtag`, `mention` | `share`              | The type of button
-`href`    | *string*      | `http://customelements.io` | The URL displayed on the tweet
-`user`    | *string*      | `zenorocha`                | The user displayed on the tweet and in the @mention
-`hashtag` | *string*          | `customelements`           | The hashtag displayed on the tweet
+`href`    | *string*      | `http://webcomponents.org` | The URL displayed on the tweet
+`user`    | *string*      | `Web_Components`                | The user displayed on the tweet and in the @mention
+`hashtag` | *string*          | `webcomponents`           | The hashtag displayed on the tweet
 `height`  | *int*         | `25`                       | The height of the button
 `width`   | *int*         | `115`                      | The width of the button
 
