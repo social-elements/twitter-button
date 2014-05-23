@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>&lt;twitter-button&gt;</title>
+    <meta charset="UTF-8">
+    <title>&lt;twitter-button&gt;</title>
 
-	<!-- Importing Web Component's Polyfill -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.4/platform.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.4/polymer.js"></script>
+    <!-- Importing Web Component's Polyfill -->
+    <script src="bower_components/platform/platform.js"></script>
 
-	<!-- Importing Custom Elements -->
-	<link rel="import" href="src/twitter-button.html">
+    <!-- Importing Custom Elements -->
+    <link rel="import" href="src/twitter-button.html">
 </head>
 <body>
 
-	<!-- Using Custom Elements -->
-	<twitter-button type="share" text="Custom Elements rocks!" user="zenorocha" href="http://customelements.io/" width="300"></twitter-button>
+    <!-- Using Custom Elements -->
+    <twitter-button type="share" text="Custom Elements rocks!" user="zenorocha" href="http://customelements.io/" width="300"></twitter-button>
 
-	<br><br>
+    <br><br>
 
-	<twitter-button type="follow" user="zenorocha" width="300"></twitter-button>
+    <twitter-button type="follow" user="zenorocha" width="300"></twitter-button>
 
-	<br><br>
+    <br><br>
 
-	<twitter-button type="hashtag" hashtag="customelements" width="300"></twitter-button>
+    <twitter-button type="hashtag" hashtag="customelements" width="300"></twitter-button>
 
-	<br><br>
+    <br><br>
 
-	<twitter-button type="mention" user="zenorocha" width="300"></twitter-button>
+    <twitter-button type="mention" user="zenorocha" width="300"></twitter-button>
 
 </body>
 </html>
