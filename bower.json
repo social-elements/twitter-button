@@ -1,6 +1,6 @@
 {
     "name": "twitter-button",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "description": "Web Component wrapper for Twitter's button using Polymer.",
     "license": "MIT",
     "main": "dist/twitter-button.html",
