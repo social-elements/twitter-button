@@ -10,7 +10,7 @@
         </template>
 
         <template if="{{type == 'share'}}">
-            <iframe src="http://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
         </template>
 
         <template if="{{type == 'hashtag'}}">
@@ -31,10 +31,10 @@
 
     <script>
         Polymer('twitter-button', {
-            text   : 'Custom Elements rocks!',
-            href   : 'http://customelements.io',
-            user   : 'zenorocha',
-            hashtag: 'customelements',
+            text   : 'Web Components rocks!',
+            href   : 'http://webcomponents.org',
+            user   : 'Web_Components',
+            hashtag: 'webcomponents',
             height : '25',
             width  : '115',
             type   : 'share'
