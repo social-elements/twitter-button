@@ -1,44 +1,65 @@
 <!-- Import Polymer -->
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<!-- Define your custom element -->
-<polymer-element name="twitter-button" attributes="text type href user hashtag height width">
-
-    <template>
-        <template if="{{type == 'follow'}}">
-            <iframe src="https://platform.twitter.com/widgets/follow_button.html?screen_name={{user}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-        </template>
-
-        <template if="{{type == 'share'}}">
-            <iframe src="https://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-        </template>
-
-        <template if="{{type == 'hashtag'}}">
-            <iframe src="https://platform.twitter.com/widgets/tweet_button.html?text={{text}}&amp;button_hashtag={{hashtag}}&amp;type=hashtag" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-        </template>
-
-        <template if="{{type == 'mention'}}">
-            <iframe src="https://platform.twitter.com/widgets/tweet_button.html?screen_name={{user}}&amp;type=mention" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-        </template>
-
-        <style>
-            iframe {
-                height: {{height}}px;
-                width: {{width}}px;
-            }
-        </style>
+<dom-module id="twitter-button">
+  <template>
+    <template is="dom-if" if="{{types.follow}}">
+      <a href="{{shareUrl}}" class="twitter-follow-button" data-show-count="false"></a>
     </template>
 
-    <script>
-        Polymer('twitter-button', {
-            text   : 'Web Components rocks!',
-            href   : 'http://webcomponents.org',
-            user   : 'Web_Components',
-            hashtag: 'webcomponents',
-            height : '25',
-            width  : '115',
-            type   : 'share'
-        });
-    </script>
+    <template is="dom-if" if="{{types.share}}">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags$="{{hashtag}}" data-text$="{{text}}" data-via$="{{user}}"></a>
+    </template>
 
-</polymer-element>
+    <template is="dom-if" if="{{types.hashtag}}">
+      <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}"></a>
+    </template>
+
+    <template is="dom-if" if="{{types.mention}}">
+      <a href="{{mentionUrl}}" class="twitter-mention-button" data-related$="{{user}}"></a>
+    </template>
+  </template>
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</dom-module>
+
+<script>
+  // register a new element called proto-element
+  Polymer({
+    is: 'twitter-button',
+    properties: {
+      user: String,
+      type: String,
+      link: String,
+      text: String,
+      href: String,
+      hashtag: String,
+      shareUrl: {
+        type: String,
+        computed: 'computeShareUrl(user)'
+      },
+      hashtagUrl: {
+        type: String,
+        computed: 'computeHashtagUrl(hashtag)'
+      },
+      mentionUrl: {
+        type: String,
+        computed: 'computeMentionUrl(user)'
+      },
+    },
+    computeShareUrl: function(user) {
+      return 'https://twitter.com/' + user;
+    },
+    computeHashtagUrl: function(hashtag) {
+      return 'https://twitter.com/intent/tweet?button_hashtag=' + hashtag;
+    },
+    computeMentionUrl: function(user) {
+      return 'https://twitter.com/intent/tweet?screen_name=' + user;
+    },
+    ready: function() {
+      this.types = {};
+
+      this.set('types.' + this.type, true);
+    }
+  });
+</script>
