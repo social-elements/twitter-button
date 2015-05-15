@@ -8,7 +8,7 @@
     </template>
 
     <template is="dom-if" if="{{types.share}}">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags$="{{hashtag}}" data-text$="{{text}}" data-via$="{{user}}"></a>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url$="{{link}}" data-hashtags$="{{hashtag}}" data-text$="{{text}}" data-via$="{{user}}"></a>
     </template>
 
     <template is="dom-if" if="{{types.hashtag}}">
