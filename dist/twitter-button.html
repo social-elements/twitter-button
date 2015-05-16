@@ -35,7 +35,6 @@
 </dom-module>
 
 <script>
-  // register a new element called proto-element
   Polymer({
     is: 'twitter-button-share',
     properties: {
@@ -49,13 +48,12 @@
 
 <!-- twitter-button-hashtag -->
 <dom-module id="twitter-button-hashtag">
-  <template is="dom-if">
-  <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}" data-text$="{{text}}"></a>
+  <template>
+    <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}" data-text$="{{text}}"></a>
   </template>
 </dom-module>
 
 <script>
-  // register a new element called proto-element
   Polymer({
     is: 'twitter-button-hashtag',
     properties: {
