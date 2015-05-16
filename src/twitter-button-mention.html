@@ -1,0 +1,24 @@
+<!-- twitter-button-mention -->
+<dom-module id="twitter-button-mention">
+  <template>
+    <a href="{{mentionUrl}}" class="twitter-mention-button" data-related$="{{user}}" data-text$="{{text}}"></a>
+  </template>
+</dom-module>
+
+<script>
+  // register a new element called proto-element
+  Polymer({
+    is: 'twitter-button-mention',
+    properties: {
+      user: String,
+      text: String,
+      mentionUrl: {
+        type: String,
+        computed: 'computeMentionUrl(user)'
+      }
+    },
+    computeMentionUrl: function(user) {
+      return 'https://twitter.com/intent/tweet?screen_name=' + user;
+    }
+  });
+</script>
