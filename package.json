@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "vulcanize": "vulcanize ./src/twitter-button.html > ./dist/twitter-button.html"
+  },
     "private": true,
     "devDependencies": {
         "grunt": "^0.4.5",
