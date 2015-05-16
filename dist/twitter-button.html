@@ -1,20 +1,4 @@
-<html><head><meta charset="UTF-8"><!-- Include Twitter Script --><!-- twitter-button-mention --><!-- Import buttons --><!--
-@license
-Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><!--
-@license
-Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><!-- Import Polymer --><script>Polymer = {
+<!-- Import Polymer --><html><head><script>Polymer = {
 Settings: function () {
 var user = window.Polymer || {};
 location.search.slice(1).split('&').forEach(function (o) {
@@ -522,6 +506,7 @@ _marshalBehavior: function (b) {
 this._installHostAttributes(b.hostAttributes);
 }
 });</script>
+
 <script>Polymer.Base._addFeature({
 _prepTemplate: function () {
 this._template = this._template || Polymer.DomModule.import(this.is, 'template');
@@ -1857,6 +1842,7 @@ _marshalBehavior: function (b) {
 this._installHostAttributes(b.hostAttributes);
 }
 });</script>
+
 <script>Polymer.nar = [];
 Polymer.Annotations = {
 parseAnnotations: function (template) {
@@ -5274,9 +5260,17 @@ Polymer.Base._initFeatures.call(this);
 });</script>
 
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></head><body><div hidden="" by-vulcanize=""><dom-module id="twitter-button-follow" assetpath="/">
+<!-- Import buttons -->
+
+
+
+
+
+<!-- Include Twitter Script -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></head><body><div hidden="">
+<dom-module id="twitter-button-follow">
   <template>
-    <a href="{{followUrl}}" class="twitter-follow-button" data-show-count="true"></a>
+    <a href="{{followUrl}}" class="twitter-follow-button" data-show-count$="{{showCount}}"></a>
   </template>
 </dom-module>
 
@@ -5285,6 +5279,7 @@ Polymer.Base._initFeatures.call(this);
     is: 'twitter-button-follow',
     properties: {
       user: String,
+      showCount: String,
       followUrl: {
         type: String,
         computed: 'computeFollowUrl(user)'
@@ -5294,7 +5289,8 @@ Polymer.Base._initFeatures.call(this);
       return 'https://twitter.com/' + user;
     }
   });
-</script><dom-module id="twitter-button-hashtag" assetpath="/">
+</script>
+<dom-module id="twitter-button-hashtag">
   <template>
     <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}" data-text$="{{text}}"></a>
   </template>
@@ -5316,7 +5312,8 @@ Polymer.Base._initFeatures.call(this);
       return 'https://twitter.com/intent/tweet?button_hashtag=' + hashtag;
     }
   });
-</script><dom-module id="twitter-button-mention" assetpath="/">
+</script>
+<dom-module id="twitter-button-mention">
   <template>
     <a href="{{mentionUrl}}" class="twitter-mention-button" data-related$="{{user}}" data-text$="{{text}}"></a>
   </template>
@@ -5339,7 +5336,8 @@ Polymer.Base._initFeatures.call(this);
     }
   });
 </script>
-<dom-module id="twitter-button-share" assetpath="/">
+
+<dom-module id="twitter-button-share">
   <template>
     <a href="https://twitter.com/share" class="twitter-share-button" data-url$="{{link}}" data-hashtags$="{{hashtag}}" data-text$="{{text}}" data-via$="{{user}}"></a>
   </template>
