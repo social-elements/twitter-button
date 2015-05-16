@@ -1,23 +1,35 @@
 <!-- Import Polymer -->
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<dom-module id="twitter-button">
+<!-- twitter-button-follow -->
+<dom-module id="twitter-button-follow">
   <template>
-    <template is="dom-if" if="{{types.follow}}">
-      <a href="{{shareUrl}}" class="twitter-follow-button" data-show-count="true"></a>
-    </template>
+    <a href="{{followUrl}}" class="twitter-follow-button" data-show-count="true"></a>
+  </template>
 
-    <template is="dom-if" if="{{types.share}}">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url$="{{link}}" data-hashtags$="{{hashtag}}" data-text$="{{text}}" data-via$="{{user}}"></a>
-    </template>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</dom-module>
 
-    <template is="dom-if" if="{{types.hashtag}}">
-      <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}" data-text$="{{text}}"></a>
-    </template>
+<script>
+  Polymer({
+    is: 'twitter-button-follow',
+    properties: {
+      user: String,
+      followUrl: {
+        type: String,
+        computed: 'computeFollowUrl(user)'
+      }
+    },
+    computeFollowUrl: function(user) {
+      return 'https://twitter.com/' + user;
+    }
+  });
+</script>
 
-    <template is="dom-if" if="{{types.mention}}">
-      <a href="{{mentionUrl}}" class="twitter-mention-button" data-related$="{{user}}" data-text$="{{text}}"></a>
-    </template>
+<!-- twitter-button-share -->
+<dom-module id="twitter-button-share">
+  <template>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url$="{{link}}" data-hashtags$="{{hashtag}}" data-text$="{{text}}" data-via$="{{user}}"></a>
   </template>
 
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -26,39 +38,67 @@
 <script>
   // register a new element called proto-element
   Polymer({
-    is: 'twitter-button',
+    is: 'twitter-button-share',
     properties: {
       user: String,
-      type: String,
+      link: String,
+      text: String,
+      hashtag: String
+    }
+  });
+</script>
+
+<!-- twitter-button-hashtag -->
+<dom-module id="twitter-button-hashtag">
+  <template is="dom-if">
+  <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}" data-text$="{{text}}"></a>
+  </template>
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</dom-module>
+
+<script>
+  // register a new element called proto-element
+  Polymer({
+    is: 'twitter-button-hashtag',
+    properties: {
       link: String,
       text: String,
       hashtag: String,
-      shareUrl: {
-        type: String,
-        computed: 'computeShareUrl(user)'
-      },
       hashtagUrl: {
         type: String,
         computed: 'computeHashtagUrl(hashtag)'
-      },
-      mentionUrl: {
-        type: String,
-        computed: 'computeMentionUrl(user)'
-      },
-    },
-    computeShareUrl: function(user) {
-      return 'https://twitter.com/' + user;
+      }
     },
     computeHashtagUrl: function(hashtag) {
       return 'https://twitter.com/intent/tweet?button_hashtag=' + hashtag;
+    }
+  });
+</script>
+
+<!-- twitter-button-mention -->
+<dom-module id="twitter-button-mention">
+  <template>
+    <a href="{{mentionUrl}}" class="twitter-mention-button" data-related$="{{user}}" data-text$="{{text}}"></a>
+  </template>
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</dom-module>
+
+<script>
+  // register a new element called proto-element
+  Polymer({
+    is: 'twitter-button-mention',
+    properties: {
+      user: String,
+      text: String,
+      mentionUrl: {
+        type: String,
+        computed: 'computeMentionUrl(user)'
+      }
     },
     computeMentionUrl: function(user) {
       return 'https://twitter.com/intent/tweet?screen_name=' + user;
-    },
-    ready: function() {
-      this.types = {};
-
-      this.set('types.' + this.type || 'share', true);
     }
   });
 </script>
