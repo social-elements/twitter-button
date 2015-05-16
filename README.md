@@ -35,19 +35,16 @@ Or [download as ZIP](https://github.com/zenorocha/twitter-button/archive/master.
 3. Start using it!
 
     ```html
-    <twitter-button></twitter-button>
+    <twitter-button-follow user="Web_Components"></twitter-button-follow>
+    
+    <twitter-button-share user="Web_Components" hashtag="HelloWorld" text="This is my text!" link="http://www.nfl.com"></twitter-button-share>
+    
+    <twitter-button-hashtag hashtag="HelloWorld" link="http://webcomponents.org" text="This is my text!"></twitter-button-hashtag>
+    
+    <twitter-button-mention user="Web_Components" text="Hello Everyone!"></twitter-button-mention>
     ```
 
 ## Options
-
-Attribute | Options                                 | Description
----       | ---                                     | ---
-`text`    | *string*                                | The text displayed on the tweet
-`type`    | `share`, `follow`, `hashtag`, `mention` | The type of button
-`link`    | *string*                                | The URL displayed on the tweet
-`user`    | *string*                                | The user displayed on the tweet and in the @mention
-`hashtag` | *string*                                | The hashtag displayed on the tweet
-
 > See Twitter's [official documentation](https://twitter.com/about/resources/buttons).
 
 ## Development
