@@ -1,6 +1,7 @@
 <!-- Import Polymer -->
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
+<!-- Include Twitter Script -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 <!-- twitter-button-follow -->
@@ -34,7 +35,6 @@
 </dom-module>
 
 <script>
-  // register a new element called proto-element
   Polymer({
     is: 'twitter-button-share',
     properties: {
@@ -48,13 +48,12 @@
 
 <!-- twitter-button-hashtag -->
 <dom-module id="twitter-button-hashtag">
-  <template is="dom-if">
-  <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}" data-text$="{{text}}"></a>
+  <template>
+    <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}" data-text$="{{text}}"></a>
   </template>
 </dom-module>
 
 <script>
-  // register a new element called proto-element
   Polymer({
     is: 'twitter-button-hashtag',
     properties: {
