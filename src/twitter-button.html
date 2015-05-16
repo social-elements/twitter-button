@@ -1,13 +1,13 @@
 <!-- Import Polymer -->
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
 <!-- twitter-button-follow -->
 <dom-module id="twitter-button-follow">
   <template>
     <a href="{{followUrl}}" class="twitter-follow-button" data-show-count="true"></a>
   </template>
-
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </dom-module>
 
 <script>
@@ -31,8 +31,6 @@
   <template>
     <a href="https://twitter.com/share" class="twitter-share-button" data-url$="{{link}}" data-hashtags$="{{hashtag}}" data-text$="{{text}}" data-via$="{{user}}"></a>
   </template>
-
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </dom-module>
 
 <script>
@@ -53,8 +51,6 @@
   <template is="dom-if">
   <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}" data-text$="{{text}}"></a>
   </template>
-
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </dom-module>
 
 <script>
@@ -81,8 +77,6 @@
   <template>
     <a href="{{mentionUrl}}" class="twitter-mention-button" data-related$="{{user}}" data-text$="{{text}}"></a>
   </template>
-
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </dom-module>
 
 <script>
