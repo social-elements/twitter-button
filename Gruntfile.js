@@ -1,4 +1,8 @@
 module.exports = function(grunt) {
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-vulcanize');
 
   grunt.initConfig({
     'connect': {
@@ -16,20 +20,30 @@ module.exports = function(grunt) {
       src: [
         'bower_components/**/*',
         '!bower_components/twitter-button/**/*',
-        'src/*', 'index.html'
+        'src/*',
+        'index.html'
       ]
     },
     vulcanize: {
+      // Do not include polymer in the build
       default: {
         options: {
-          //excludes: {
-          //  imports: [
-          //    'polymer.html'
-          //  ]
-          //}
+          excludes: {
+            imports: [
+              'polymer.html'
+            ]
+          }
         },
         files: {
           './dist/twitter-button.html': './src/twitter-button.html'
+        }
+      },
+      // Do not include polymer in the build
+      noPolymer: {
+        options: {
+        },
+        files: {
+          './dist/twitter-button-standalone.html': './src/twitter-button.html'
         }
       }
     },
@@ -44,11 +58,6 @@ module.exports = function(grunt) {
       }
     }
   });
-
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-gh-pages');
-  grunt.loadNpmTasks('grunt-text-replace');
-  grunt.loadNpmTasks('grunt-vulcanize');
 
   grunt.registerTask('build',  ['vulcanize']);
   grunt.registerTask('deploy', ['gh-pages']);
