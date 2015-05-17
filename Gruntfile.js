@@ -24,29 +24,6 @@ module.exports = function(grunt) {
         'index.html'
       ]
     },
-    vulcanize: {
-      // Do not include polymer in the build
-      default: {
-        options: {
-          excludes: {
-            imports: [
-              'polymer.html'
-            ]
-          }
-        },
-        files: {
-          './dist/twitter-button.html': './src/twitter-button.html'
-        }
-      },
-      // Do not include polymer in the build
-      noPolymer: {
-        options: {
-        },
-        files: {
-          './dist/twitter-button-standalone.html': './src/twitter-button.html'
-        }
-      }
-    },
     'replace': {
       example: {
         src: ['src/*'],
@@ -59,7 +36,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build',  ['vulcanize']);
+  grunt.registerTask('build',  ['replace']);
   grunt.registerTask('deploy', ['gh-pages']);
   grunt.registerTask('serve', ['connect']);
 };
