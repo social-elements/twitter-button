@@ -1,0 +1,22 @@
+<dom-module id="twitter-button-follow">
+  <template>
+    <a href="{{followUrl}}" class="twitter-follow-button" data-show-count$="{{showCount}}"></a>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'twitter-button-follow',
+    properties: {
+      user: String,
+      showCount: String,
+      followUrl: {
+        type: String,
+        computed: 'computeFollowUrl(user)'
+      }
+    },
+    computeFollowUrl: function(user) {
+      return 'https://twitter.com/' + user;
+    }
+  });
+</script>

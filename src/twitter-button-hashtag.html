@@ -1,0 +1,23 @@
+<dom-module id="twitter-button-hashtag">
+  <template>
+    <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}" data-text$="{{text}}"></a>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'twitter-button-hashtag',
+    properties: {
+      link: String,
+      text: String,
+      hashtag: String,
+      hashtagUrl: {
+        type: String,
+        computed: 'computeHashtagUrl(hashtag)'
+      }
+    },
+    computeHashtagUrl: function(hashtag) {
+      return 'https://twitter.com/intent/tweet?button_hashtag=' + hashtag;
+    }
+  });
+</script>
