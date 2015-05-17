@@ -1,0 +1,22 @@
+<dom-module id="twitter-button-share">
+  <template>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url$="{{link}}"
+       data-hashtags$="{{hashtag}}"
+       data-text$="{{text}}"
+       data-via$="{{user}}"></a>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'twitter-button-share',
+    properties: {
+      user: String,
+      link: String,
+      text: String,
+      hashtag: String
+    }
+  });
+</script>
