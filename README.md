@@ -30,10 +30,6 @@ Or [download as ZIP](https://github.com/zenorocha/twitter-button/archive/master.
 
     ```html
     <link rel="import" href="bower_components/twitter-button/dist/twitter-button.html">
-    
-    OR
-    
-    <link rel="import" href="bower_components/twitter-button/dist/twitter-button-standalone.html">
     ```
 
 3. Start using it!
