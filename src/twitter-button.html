@@ -1,44 +1,85 @@
 <!-- Import Polymer -->
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<!-- Define your custom element -->
-<polymer-element name="twitter-button" attributes="text type href user hashtag height width">
-
+<!-- Defines element markup -->
+<dom-module id="twitter-button">
     <template>
-        <template if="{{type == 'follow'}}">
-            <iframe src="https://platform.twitter.com/widgets/follow_button.html?screen_name={{user}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-        </template>
-
-        <template if="{{type == 'share'}}">
-            <iframe src="https://platform.twitter.com/widgets/tweet_button.html?url={{href}}&amp;via={{user}}&amp;text={{text}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-        </template>
-
-        <template if="{{type == 'hashtag'}}">
-            <iframe src="https://platform.twitter.com/widgets/tweet_button.html?text={{text}}&amp;button_hashtag={{hashtag}}&amp;type=hashtag" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-        </template>
-
-        <template if="{{type == 'mention'}}">
-            <iframe src="https://platform.twitter.com/widgets/tweet_button.html?screen_name={{user}}&amp;type=mention" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-        </template>
-
-        <style>
-            iframe {
-                height: {{height}}px;
-                width: {{width}}px;
-            }
-        </style>
+        <iframe src$="{{iframeSource(text, href, user, hashtag, height, width, type)}}" style$="{{iframeStyle(width, height)}}" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
     </template>
+</dom-module>
 
-    <script>
-        Polymer('twitter-button', {
-            text   : 'Web Components rocks!',
-            href   : 'http://webcomponents.org',
-            user   : 'Web_Components',
-            hashtag: 'webcomponents',
-            height : '25',
-            width  : '115',
-            type   : 'share'
-        });
-    </script>
+<!-- Registers custom element -->
+<script>
+    Polymer({
+        is         : 'twitter-button',
+        properties : {
+            text   : {
+                type   : String,
+                value  : 'Web Components rocks!'
+            },
+            href   : {
+                type   : String,
+                value  : 'http://webcomponents.org'
+            },
+            user   : {
+                type   : String,
+                value  : 'Web_Components'
+            },
+            hashtag: {
+                type   : String,
+                value  : 'webcomponents'
+            },
+            height : {
+                type   : Number,
+                value  : 25
+            },
+            width  : {
+                type   : Number,
+                value  : 115
+            },
+            type   : {
+                type   : String,
+                value  : 'share'
+            }
+        },
+        iframeSource: function (text, href, user, hashtag, height, width, type) {
 
-</polymer-element>
+            var url = '';
+            var param = {};
+
+            switch (type) {
+                case 'follow':
+                    url = 'https://platform.twitter.com/widgets/follow_button.html?';
+                    param['screen_name'] = user;
+                    break;
+                case 'share':
+                    url = 'https://platform.twitter.com/widgets/tweet_button.html?';
+                    param['url'] = href;
+                    param['via'] = user;
+                    param['text'] = text;
+                    break;
+                case 'hashtag':
+                    url = 'https://platform.twitter.com/widgets/tweet_button.html?';
+                    param['text'] = text;
+                    param['button_hashtag'] = hashtag;
+                    param['type'] = 'hashtag';
+                    break;
+                case 'mention':
+                    url = 'https://platform.twitter.com/widgets/tweet_button.html?';
+                    param['screen_name'] = user;
+                    param['type'] = 'mention';
+                    break;
+            }
+
+            var query = [];
+            Object.keys(param).forEach(function (key) {
+                query.push(key + '=' + encodeURIComponent(param[key]));
+            });
+
+            return url + query.join('&');
+        },
+        iframeStyle: function (width, height) {
+            return 'width:' + width + 'px;' + 'height:' + height + 'px;';
+        }
+    });
+</script>
