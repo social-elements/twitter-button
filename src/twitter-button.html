@@ -4,19 +4,19 @@
 <dom-module id="twitter-button">
   <template>
     <template is="dom-if" if="{{types.follow}}">
-      <a href="{{shareUrl}}" class="twitter-follow-button" data-show-count="true"></a>
+      <a href="{{shareUrl}}" class="twitter-follow-button" data-show-count="true">Follow</a>
     </template>
 
     <template is="dom-if" if="{{types.share}}">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url$="{{link}}" data-hashtags$="{{hashtag}}" data-text$="{{text}}" data-via$="{{user}}"></a>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url$="{{href}}" data-hashtags$="{{hashtag}}" data-text$="{{text}}" data-via$="{{user}}">Share</a>
     </template>
 
     <template is="dom-if" if="{{types.hashtag}}">
-      <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{link}}" data-text$="{{text}}"></a>
+      <a href="{{hashtagUrl}}" class="twitter-hashtag-button" data-url$="{{href}}" data-text$="{{text}}">Hashtag</a>
     </template>
 
     <template is="dom-if" if="{{types.mention}}">
-      <a href="{{mentionUrl}}" class="twitter-mention-button" data-related$="{{user}}" data-text$="{{text}}"></a>
+      <a href="{{mentionUrl}}" class="twitter-mention-button" data-related$="{{user}}" data-text$="{{text}}">Mention</a>
     </template>
   </template>
 
@@ -30,7 +30,7 @@
     properties: {
       user: String,
       type: String,
-      link: String,
+      href: String,
       text: String,
       hashtag: String,
       shareUrl: {

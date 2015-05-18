@@ -44,7 +44,7 @@ Attribute | Options                                 | Description
 ---       | ---                                     | ---
 `text`    | *string*                                | The text displayed on the tweet
 `type`    | `share`, `follow`, `hashtag`, `mention` | The type of button
-`link`    | *string*                                | The URL displayed on the tweet
+`href`    | *string*                                | The URL displayed on the tweet
 `user`    | *string*                                | The user displayed on the tweet and in the @mention
 `hashtag` | *string*                                | The hashtag displayed on the tweet
 
