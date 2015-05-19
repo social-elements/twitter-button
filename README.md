@@ -40,15 +40,13 @@ Or [download as ZIP](https://github.com/zenorocha/twitter-button/archive/master.
 
 ## Options
 
-Attribute | Options       | Default                    | Description
----       | ---           | ---                        | ---
-`text`    | *string*      | `Web Components rocks!`   | The text displayed on the tweet
-`type`    | `share`, `follow`, `hashtag`, `mention` | `share`              | The type of button
-`href`    | *string*      | `http://webcomponents.org` | The URL displayed on the tweet
-`user`    | *string*      | `Web_Components`                | The user displayed on the tweet and in the @mention
-`hashtag` | *string*          | `webcomponents`           | The hashtag displayed on the tweet
-`height`  | *int*         | `25`                       | The height of the button
-`width`   | *int*         | `115`                      | The width of the button
+Attribute | Options                                 | Description
+---       | ---                                     | ---
+`text`    | *string*                                | The text displayed on the tweet
+`type`    | `share`, `follow`, `hashtag`, `mention` | The type of button
+`href`    | *string*                                | The URL displayed on the tweet
+`user`    | *string*                                | The user displayed on the tweet and in the @mention
+`hashtag` | *string*                                | The hashtag displayed on the tweet
 
 > See Twitter's [official documentation](https://twitter.com/about/resources/buttons).
 

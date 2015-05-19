@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>&lt;twitter-button&gt;</title>
 
@@ -9,23 +10,21 @@
 
     <!-- Importing Custom Elements -->
     <link rel="import" href="src/twitter-button.html">
-</head>
-<body>
+  </head>
 
-    <!-- Using Custom Elements -->
-    <twitter-button type="share" text="Web Components rocks!" user="Web_Components" href="http://webcomponents.org/" width="300"></twitter-button>
-
-    <br><br>
-
-    <twitter-button type="follow" user="Web_Components" width="300"></twitter-button>
+  <body>
+    <twitter-button user="Web_Components" type="follow"></twitter-button>
 
     <br><br>
 
-    <twitter-button type="hashtag" hashtag="webcomponents" width="300"></twitter-button>
+    <twitter-button user="Web_Components" type="share" hashtag="HelloWorld" text="This is my text!" href="http://www.nfl.com"></twitter-button>
 
     <br><br>
 
-    <twitter-button type="mention" user="Web_Components" width="300"></twitter-button>
+    <twitter-button type="hashtag" hashtag="HelloWorld" href="http://webcomponents.org" text="This is my text!"></twitter-button>
 
-</body>
+    <br><br>
+
+    <twitter-button user="Web_Components" type="mention" text="Hello Everyone!"></twitter-button>
+  </body>
 </html>
